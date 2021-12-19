@@ -12,10 +12,12 @@ jobs:
       #三方flutter的Action，它可以在服务器配置一个Flutter环境
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.15.0'
+          flutter-version: '2.5.0'
           channel: 'stable'
       #想让我们CI做的事情！
-      - run: cd my_flutter_module && flutter build ios-framework --cocoapods --output=../NativeAPP/Flutter 
+      - run: cd my_flutter_module 
+      - run: flutter pub get
+      - run: flutter build ios-framework --cocoapods --output=../NativeAPP/Flutter
       - run: |
          git add .
          git commit -m 'update flutter framework'
