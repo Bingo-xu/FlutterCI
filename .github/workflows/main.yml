@@ -1,7 +1,5 @@
 name: FlutterCI #CI名称
 on: [push] #触发条件push操作！
-push:
-    branches: [ main]
     
 jobs:
   check:
