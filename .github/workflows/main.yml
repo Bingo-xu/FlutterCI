@@ -1,6 +1,8 @@
 name: FlutterCI #CI名称
-on: [push] #触发条件push操作！
-
+# on: [push] #触发条件push操作！
+push:
+    branches: [ main]
+    
 jobs:
   check:
     name: Test on ${{ matrix.os }}
@@ -12,8 +14,8 @@ jobs:
       #三方flutter的Action，它可以在服务器配置一个Flutter环境
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.5.0'
-          channel: 'stable'
+          flutter-version: '2.15.0'
+          channel: 'dev'
       #想让我们CI做的事情！
       - run: cd my_flutter_module 
       - run: flutter pub get
