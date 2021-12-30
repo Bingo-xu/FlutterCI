@@ -16,10 +16,7 @@ jobs:
           channel: 'stable'
       #想让我们CI做的事情！
       - run: flutter doctor -v
-      - run: cd my_flutter_module
-      - run: flutter clean
-      - run: flutter pub get
-      - run: flutter build ios-framework --output=../NativeAPP/Flutter
+      - run: cd my_flutter_module && flutter build ios-framework --output=../NativeAPP/Flutter
       - run: |
          git add .
          git commit -m 'update flutter framework'
