@@ -17,7 +17,7 @@ jobs:
       #想让我们CI做的事情！
       - run: flutter doctor -v
       - run: cd my_flutter_module && flutter build ios-framework --output=../NativeAPP/Flutter
-      - run: git config —global http.postBuffer 524288000 
+      - run: git config --global http.postBuffer 524288000 
       - run: |
          git add .
          git commit -m 'update flutter framework' 
