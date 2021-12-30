@@ -20,9 +20,11 @@ jobs:
       - run: |
          git add .
          git commit -m 'update flutter framework'
+         git config —global http.postBuffer 524288000  
      
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        #选择分支master
+        uses: ad-m/github-push-action@master 
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
