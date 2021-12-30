@@ -12,8 +12,8 @@ jobs:
       #三方flutter的Action，它可以在服务器配置一个Flutter环境
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.9.0'
-          channel: 'dev'
+          flutter-version: '2.5.3'
+          channel: 'stable'
       #想让我们CI做的事情！
       - run: flutter doctor -v
       - run: cd my_flutter_module
