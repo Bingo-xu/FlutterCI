@@ -5,7 +5,7 @@ jobs:
   check:
     name: Test on ${{ matrix.os }}
     #运行在哪个平台这里是MacOS平台
-    runs-on: macos-latest
+    runs-on: macOS-11
     
     steps:
       - uses: actions/checkout@v1
