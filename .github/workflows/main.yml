@@ -15,7 +15,7 @@ jobs:
           flutter-version: '2.9.0'
           channel: 'dev'
       #想让我们CI做的事情！
-      - run: cd my_flutter_module
+      - run: cd ./my_flutter_module
       - run: flutter clean
       - run: flutter pub get
       - run: flutter build ios-framework --output=../NativeAPP/Flutter
