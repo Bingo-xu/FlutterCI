@@ -19,6 +19,24 @@ jobs:
       - run: cd my_flutter_module && flutter clean
       - run: cd my_flutter_module && flutter pub get 
       - run: cd my_flutter_module && flutter build ios-framework --cocoapods --output=../NativeAPP/Flutter
+      - run: |
+         cd my_flutter_module/NativeAPP/Flutter
+         cd Debug
+         mv App.xcframework  DebugApp.xcframework
+         mv DebugApp.xcframework ..
+         cd ..
+         rm -r Debug
+         cd  Profile
+         mv App.xcframework  ProfileApp.xcframework
+         mv ProfileApp.xcframework ..
+         cd ..
+         rm -r Profile
+         cd  Release
+         mv App.xcframework  ReleaseApp.xcframework
+         mv ReleaseApp.xcframework ..
+         mv Flutter.podspec ..
+         cd ..
+         rm -r  Release
       - run: git config --global http.postBuffer 524288000 
       - run: |
          git add .
